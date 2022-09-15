@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% extends "AppTwo/base.html "%}
+	{% block body_block %}
+	<!-- what ever is inside this block will appear -->
+	<h1>Here are your books:</h1>
+	<div>
+		{% if book_objects %}
+
+		<!-- To appear as list
+		<ol>
+			{% for bobj in book_objects %}
+			<li>User Info
+				<ul>
+					<li>Book Name: {{ bobj.book_name }}</li>
+					<li>Author Name: {{ bobj.author_name }}</li>
+					<li>Summary: {{ bobj.book_summary }}</li>
+				</ul>
+			</li>
+			{% endfor %}
+		</ol> -->
+
+      <table>
+        <tr>
+          <th>Book Name</th>
+          <th>Author Name</th>
+          <th>Summary</th>
+        </tr>
+        {% for bobj in book_objects %}
+        <tr>
+          <td>{{ bobj.book_name }}</td>
+          <td>{{ bobj.author_name}}</td>
+          <td>{{ bobj.book_summary}}</td>
+        </tr>
+        {% endfor %}
+      </table>
+
+		{% endif %}
+		</div>
+
+	{% endblock %}

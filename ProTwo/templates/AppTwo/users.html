@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Users Page</title>
+</head>
+<body>
+	<h1>Here are your users:</h1>
+	<div>
+		{% if user_objects %}
+		
+		<ol>
+			{% for uobj in user_objects %}
+			<li>User Info
+				<ul>
+					<li>First Name: {{ uobj.first_name }}</li>
+					<li>Last Name: {{ uobj.last_name }}</li>
+					<li>Email: {{ uobj.email }}</li>
+				</ul>
+			</li>
+			{% endfor %}
+		</ol>
+
+		{% endif %}
+	</div>
+
+</body>
+</html>

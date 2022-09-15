@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+{% extends "AppTwo/base.html "%}
+	{% block body_block %}
+	<!-- what ever is inside this block will appear -->
+  <h1>Add a new book! </h1>
+  <div class="container">
+    <form method="POST">
+      {{ form.as_p }}
+      {% csrf_token %}
+      <input type="submit" name="btn btn-primary" value="Submit">
+    </form>
+
+  </div>
+
+	{% endblock %}
